@@ -1,0 +1,183 @@
+/* ====================================================================
+   CICLOPEDALEO - ESTILOS PERSONALIZADOS & MICRO-INTERACCIONES
+   Paleta: Rojo Vibrante (#E53935), Fondo Oscuro (#111111 / #0A0A0A)
+   ==================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap');
+
+:root {
+  --color-brand-red: #E53935;
+  --color-brand-red-hover: #D32F2F;
+  --color-brand-red-dark: #B71C1C;
+  --color-brand-dark: #111111;
+  --color-brand-darker: #0A0A0A;
+  --color-brand-surface: #18181B;
+  --color-brand-surface-card: #202024;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  --color-brand-red-glow: rgba(229, 57, 53, 0.35);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-brand-darker);
+  color: #F4F4F5;
+  overflow-x: hidden;
+}
+
+/* Scrollbar personalizado estilo taller deportivo */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red);
+}
+
+/* Efecto de luz ambiental / Glows */
+.red-glow-spotlight {
+  background: radial-gradient(circle at 50% 30%, rgba(229, 57, 53, 0.18) 0%, rgba(17, 17, 17, 0) 70%);
+}
+
+.red-glow-subtle {
+  box-shadow: 0 0 25px rgba(229, 57, 53, 0.25);
+}
+
+.red-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(229, 57, 53, 0.45);
+  border-color: rgba(229, 57, 53, 0.8) !important;
+  transform: translateY(-4px);
+}
+
+/* Textura sutil deportiva / Malla técnica de fondo */
+.bg-mesh-dark {
+  background-color: #0d0d0f;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(229, 57, 53, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(229, 57, 53, 0.05) 0px, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Tarjetas Glassmorphism oscuro */
+.glass-card {
+  background: rgba(24, 24, 27, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(30, 30, 35, 0.9);
+  border-color: rgba(229, 57, 53, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(229, 57, 53, 0.2);
+}
+
+/* Botón WhatsApp Flotante animado */
+.whatsapp-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Animación sutil de engranaje o pedaleo */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Gradiente de texto de marca */
+.text-gradient-red {
+  background: linear-gradient(135deg, #FFFFFF 20%, #F87171 70%, #E53935 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, #FF5252 0%, #E53935 50%, #B71C1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Línea de acento dinámico */
+.red-stripe {
+  position: relative;
+}
+
+.red-stripe::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background-color: var(--color-brand-red);
+  border-radius: 2px;
+}
+
+/* Badges de Marcas */
+.brand-pill {
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-pill:hover {
+  background: rgba(229, 57, 53, 0.12);
+  border-color: rgba(229, 57, 53, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Transiciones para acordeón */
+.accordion-content {
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon.open {
+  transform: rotate(180deg);
+}
